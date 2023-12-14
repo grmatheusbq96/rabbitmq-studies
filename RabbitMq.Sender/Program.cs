@@ -13,8 +13,11 @@
         Console.WriteLine("Ocorreu um erro ao enviar a mensagem");
       else
       {
-        Console.WriteLine("Mensagem enviada com sucesso, tecle para sair.");
-        Console.ReadLine();
+        while (retorno)
+        {
+          var novaMensagem = Console.ReadLine();
+          retorno = MessageSender.Send(novaMensagem);
+        }
       }
     }
   }
